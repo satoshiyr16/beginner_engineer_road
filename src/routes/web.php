@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,6 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('topPage');
 });
-Route::get('/post', function () {
+Route::get('/add_post', function () {
     return view('post');
 });
+
+Route::post('/post', [PostController::class, 'store']);
+

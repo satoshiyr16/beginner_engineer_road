@@ -1,6 +1,6 @@
 <html>
   @extends('layouts.app')
-  @section('add_head')
+  @section('additionHeader')
     <link rel="stylesheet" href="{{ asset('css/topPage.css') }}">
   @endsection
   @section('content')
@@ -13,5 +13,6 @@
           </div>
         </div>
       </div>
+
   @endsection
 </html>

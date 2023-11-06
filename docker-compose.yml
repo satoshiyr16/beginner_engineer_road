@@ -19,5 +19,12 @@ services:
     volumes:
       - db-store:/var/lib/mysql
 
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - 8081:80
+    environment:
+      PMA_HOST: db
+
 volumes:
   db-store:

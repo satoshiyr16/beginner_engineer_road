@@ -13,8 +13,8 @@
           <span class="c-button_close" id="js-button_close"></span>
         </div>
         <ul class="p-nav_list">
-          <li>あ</li>
-          <li>い</li>
+        <a href="/"><li>TOP</li></a>
+        <a href="/add_post"><li>POST</li></a>
           <li>う</li>
           <li>え</li>
           <li>お</li>

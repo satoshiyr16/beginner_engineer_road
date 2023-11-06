@@ -1,17 +1,17 @@
-.topPage_area{
-  .title_area{
+.l-topPage_area{
+  .p-title_area{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 85%;
 
-    .title_section{
+    .p-title_section{
       display: flex;
       justify-content: center;
       flex-direction: column;
       text-align: center;
 
-      .sub_title{
+      .p-sub_title{
         margin: 20px;
       }
     }

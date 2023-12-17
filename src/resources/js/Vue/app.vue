@@ -1,4 +1,3 @@
 <template>
-    <h1>HEllo</h1>
+  <router-view></router-view>
 </template>
-

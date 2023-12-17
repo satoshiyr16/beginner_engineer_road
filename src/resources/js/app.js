@@ -5,11 +5,12 @@ window.axios = axios;
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
-import { createApp } from 'vue';
-import App from './Vue/app.vue';
+import { createApp } from "vue";
+
+import App from "./Vue/app.vue";
+import router from "./router";
 
 const app = createApp(App);
+app.use(router);
 
-console.log(app.version);
-
-app.mount('#app');
+app.mount("#app");

@@ -1,8 +1,11 @@
 <template>
   <div id="l-loading" v-show="isVisible">
     <div id="c-loading_text">{{ loadingPercentage }}%</div>
-    <div id="c-loading_bar"></div>
-    <div id="c-loading_bar_overlap" :style="{ width: loadingPercentage + '%' }"></div>
+    <!-- <div id="c-loading_bar"></div>
+    <div id="c-loading_bar_overlap" :style="{ width: loadingPercentage + '%' }"></div> -->
+    <video id="loading_video" autoplay loop muted>
+      <source src="/videos/loading_fish.mp4" type="video/mp4">
+    </video>
   </div>
 </template>
 
@@ -22,7 +25,7 @@ export default {
       const interval = setInterval(() => {
         if (this.loadingPercentage >= 100) {
           clearInterval(interval);
-          setTimeout(this.fadeOutLoadingPage, 500);
+          setTimeout(this.fadeOutLoadingPage, 1000);
         } else {
           this.loadingPercentage++;
         }
@@ -37,6 +40,7 @@ export default {
         } else {
           opacity -= 0.01;
           this.$el.style.opacity = opacity;
+          // this.$refs.loadingVideo.style.opacity = opacity;
         }
       }, 10);
     },
@@ -51,7 +55,7 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: white;
+  background-color: #CAEDFF;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -63,21 +67,34 @@ export default {
     height: 2px;
     background-color: #f1f1f1;
     width: 100%;
+    z-index: -99;
   }
 
   #c-loading_bar_overlap {
     position: absolute;
     left: 0;
     height: 2px;
-    background-color: blue;
+    background-color: black;
     width: 0;
+    z-index: -98;
   }
 
   #c-loading_text {
-    font-size: 20px;
+    font-size: 30px;
+    font-family: 'Pacifico', cursive;
     color: black;
     z-index: 10;
     margin-bottom: 40px;
+  }
+
+  #loading_video {
+    position: absolute;
+    top: 46%; /* 画面の垂直中央 */
+    left: 49%; /* 画面の水平中央 */
+    transform: translate(-50%, -50%);
+    z-index: -100;
+    width: 250px;
+    height: 250px;
   }
 
 }
